@@ -207,10 +207,10 @@
             <img class="star1 opacity08" src="images/cute-star.svg" alt="">
         </figure>
         <ul class="meunUl">
-            <li><a href="#">SKILL</a></li>
-            <li><a href="#">WEB</a></li>
-            <li><a href="#">PHOTSHOP & ILLUSTRATOR</a></li>
-            <li><a href="#">CONTANT</a></li>
+            <li><a href="#saskill">SKILL</a></li>
+            <li><a href="#saweb">WEB</a></li>
+            <li><a href="#sadesign">PHOTSHOP & ILLUSTRATOR</a></li>
+            <li><a href="#sacontact">CONTANT</a></li>
         </ul>
     </div>
     <div class="container">
@@ -235,17 +235,17 @@
                 </figure>
             </div>
         </div>
-        <div class="saweb">
+        <div class="saskill" id="saskill">
 
         </div>
-        <div class="sarwd">
+        <div class="saweb" id="saweb">
 
 
         </div>
-        <div class="sadesign">
+        <div class="sadesign" id="sadesign">
 
         </div>
-        <div class="sacontact">
+        <div class="sacontact" id="sacontact">
             <div id="aboutContant">
                 <figure class="animated infinite tada .5s">
                     <img src="images/teapot.svg" alt="" class="teapot ">
@@ -319,7 +319,9 @@
             star1.toggleClass('opacity08 opacity1');
 
         });
-
+        meunUl.find('li').on('click', function () {
+            meunUl.slideToggle();
+        });
     </script>
     <script>
         //contact area
