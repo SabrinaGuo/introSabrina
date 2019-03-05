@@ -10,12 +10,230 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 </head>
+<style>
+    h2,
+    h4 {
+        font-family: '微軟正黑體';
+    }
+
+    .di_flex {
+        display: flex;
+        align-content: center;
+    }
+
+    .opacity08 {
+        opacity: .7;
+    }
+
+    .opacity1 {
+        opacity: 1;
+    }
+
+    .introBG {
+        width: 80%;
+        transform: rotate(110deg);
+        background: #00CEFF;
+        margin: 10% 0 0 20%;
+        height: 69vh;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .container {
+        position: absolute;
+        top: 0;
+        left: calc(50% - 600px);
+    }
+
+    /*---starMeun---*/
+    .meun {
+        position: relative;
+    }
+
+    .meunStar {
+        position: fixed;
+        left: 9%;
+        top: 2%;
+        width: 2.3rem;
+        height: 2.3rem;
+        overflow: hidden;
+        z-index: 5;
+    }
+
+    .meunStar img:hover {
+        opacity: 1;
+    }
+
+    .meunStar img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .meunUl {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100VW;
+        height: 100vh;
+        padding-left: 20%;
+        padding-top: 5%;
+        z-index: 2;
+        background: rgba(255, 255, 255, 0.9);
+    }
+
+    .meunUl li {
+        list-style: none;
+        margin: 3%;
+    }
+
+    .meunUl li a {
+        text-decoration: none;
+        color: #232529;
+        font-size: 2rem;
+    }
+
+    /*---introsa---*/
+    .introsa {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .wordArea,
+    .picArea {
+        width: 45%;
+    }
+
+    .wordArea {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        margin-left: 15%;
+    }
+
+    .picArea {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .sabFig {
+        margin-top: 30%;
+    }
+
+    .sabFig img {
+        transform: rotate(-10deg) translateX(33px);
+    }
+
+    .picArea figure {
+        width: 20rem;
+        height: 40rem;
+        overflow: hidden;
+    }
+
+    .picArea figure img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    /*---saweb---*/
+
+
+    /*---sarwd---*/
+
+
+    /*---contant---*/
+    .sacontact {
+        height: 100vh;
+        /* background: lightblue; */
+    }
+
+    #aboutContant {
+        position: relative;
+        transition: 1s;
+    }
+
+    #aboutContant figure {
+        position: absolute;
+        right: 40%;
+        width: 12.5rem;
+        height: 12.5rem;
+        /* overflow: hidden; */
+        margin-top: 20%;
+        animation-duration: 2s;
+    }
+
+    #aboutContant figure img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .contacntGroup {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        padding: 22% 0 0 37%;
+    }
+
+    .contacntGroup figure {
+        width: 40px;
+        height: 40px;
+        overflow: hidden;
+        margin: 3%;
+    }
+
+    .contacntGroup figure img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .contacntGroup h2 {
+        margin: 3%;
+        font-size: 1.2rem;
+    }
+
+    /*---RWD---*/
+</style>
 
 <body>
+    <div class="introBG">
+
+    </div>
+    <div class="meun">
+        <figure class="meunStar">
+            <img class="star1 opacity08" src="images/cute-star.svg" alt="">
+        </figure>
+        <ul class="meunUl">
+            <li><a href="#">SKILL</a></li>
+            <li><a href="#">WEB</a></li>
+            <li><a href="#">PHOTSHOP & ILLUSTRATOR</a></li>
+            <li><a href="#">CONTANT</a></li>
+        </ul>
+    </div>
     <div class="container">
+
         <div class="introsa">
 
+            <div class="wordArea animated 1 slideInDown">
+                <h4>
+                    <span style="font-weight:900;">您好，我是郭怡玲</span><br>
+                    喜歡嘗試不同的事物與挑戰，<br>
+                    擅長使用與網頁互動的技巧!<br>
+
+
+                </h4>
+                <figure class="sabFig">
+                    <img src="images/sab.png" alt="">
+                </figure>
+            </div>
+            <div class="picArea animated 1 slideInDown">
+                <figure>
+                    <img src="images/IMG_2563.jpg" alt="">
+                </figure>
+            </div>
         </div>
         <div class="saweb">
 
@@ -28,26 +246,38 @@
 
         </div>
         <div class="sacontact">
-            <figure>
-                <img src="images/teapot.svg" alt="">
-            </figure>
+            <div id="aboutContant">
+                <figure class="animated infinite tada .5s">
+                    <img src="images/teapot.svg" alt="" class="teapot ">
+                </figure>
+            </div>
+
             <div class="contacntGroup">
-                <figure>
-                    <img src="images/user.svg" alt="">
-                    <h2>郭怡玲</h2>
-                </figure>
-                <figure>
-                    <img src="images/mail.svg" alt="">
+                <div id="userName" class="di_flex animated 1 fadeInDown 3.5s">
+                    <figure>
+                        <img src="images/user.svg" alt="">
+                    </figure>
+                    <h2>郭怡玲 Sabrina</h2>
+                </div>
+                <div id="mail" class="di_flex animated 1 fadeInDown 2.5">
+                    <figure>
+                        <img src="images/mail.svg" alt="">
+                    </figure>
                     <h2>hsif0111@gmail.com</h2>
-                </figure>
-                <figure>
-                    <img src="images/smartphone.svg" alt="">
+                </div>
+                <div id="phone" class="di_flex animated 1 fadeInDown 1.5s">
+                    <figure>
+                        <img src="images/smartphone.svg" alt="">
+                    </figure>
                     <h2>0905-889101</h2>
-                </figure>
-                <figure>
-                    <img src="images/chat.svg" alt="">
-                    <h2>orangeguo</h2>
-                </figure>
+                </div>
+                <div id="lineId" class="di_flex animated 1 fadeInDown .8s">
+                    <figure>
+                        <img src="images/chat.svg" alt="">
+                    </figure>
+                    <h2>LINE ID:orangeguo</h2>
+                </div>
+
             </div>
         </div>
 
@@ -74,6 +304,47 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
+
+
+    <script>
+        //meun
+        var meunStar = $('.meunStar');
+        var meunUl = $('.meunUl');
+        var star1 = $('.meunStar').find('.star1');
+
+
+        meunUl.hide();
+        meunStar.on('click', function () {
+            meunUl.slideToggle();
+            star1.toggleClass('opacity08 opacity1');
+
+        });
+
+    </script>
+    <script>
+        //contact area
+        var contacntGroup = $('.contacntGroup');
+        contacntGroup.hide();
+        $('.teapot').on(
+            'click', function () {
+                $(this).closest('#aboutContant').css({
+                    'transform': 'rotate(-20deg)',
+                    'position': 'absolute',
+                    'right': '13%',
+                    'width': '200px',
+                    'height': '200px',
+                    'marginTop': '-1%',
+                });
+                contacntGroup.fadeIn();
+                $(this).closest('figure').removeClass('animated');
+            }
+
+
+
+        );
+
+
+    </script>
 </body>
 
 </html>
