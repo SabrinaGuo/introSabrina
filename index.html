@@ -49,12 +49,22 @@
         transition: .8s;
         border: 0.5px solid black;
         box-sizing: border-box;
-        s
     }
 
+    .scroll_down {
+        padding-left: 5%;
+        font-size: 1.2rem;
+    }
+
+    .fa-angle-down {
+        position: absolute;
+        animation: .3s move infinite alternate;
+        bottom: 4px;
+        right: -13px;
+    }
 
     /*---starMeun---*/
-    .goTop {
+    #goTop {
         position: fixed;
         right: 3%;
         bottom: 3%;
@@ -162,7 +172,7 @@
 
     /*---saskill---*/
     .saskill {
-        padding-top: 3%;
+        /* padding-top: 3%; */
         height: 100vh;
         /* background: rgb(253, 162, 192); */
     }
@@ -234,7 +244,7 @@
 
     /*---saweb---*/
     .saweb {
-        background: rgb(162, 253, 223);
+        /* background: rgb(162, 253, 223); */
         height: 100vh;
     }
 
@@ -286,15 +296,13 @@
     }
 
     /*---sadesign---*/
-    .sadesign {
-        background: rgb(162, 212, 253);
-    }
+
 
     .sadesignBox {
         display: flex;
         justify-content: space-evenly;
         box-sizing: border-box;
-        padding-top: calc(50% - 40rem);
+        padding-top: calc(50% - 35rem);
         padding-left: 8%;
         flex-wrap: wrap;
     }
@@ -324,7 +332,7 @@
 
     /*---contant---*/
     .sacontact {
-        background: rgb(253, 217, 162);
+        /* background: rgb(253, 217, 162); */
         height: 100vh;
     }
 
@@ -391,16 +399,16 @@
                 <li><a href="#sacontact">CONTANT</a></li>
             </ul>
         </div>
-        <div class="goTop">
+        <div id="goTop">
             <i class="fas fa-angle-double-up"></i>
         </div>
         <div class="introsa animated 1 slideInDown">
             <div class="container introsaBox di_flex">
                 <div class="wordArea animated 1 slideInDown">
                     <h4 class="tlt">
-                        <span style="font-weight:900;">您好，我是郭怡玲</span><br>
-                        喜歡嘗試不同的事物與挑戰，<br>
-                        擅長使用與網頁互動的技巧!<br>
+                        <span style="font-weight:900;">HI 我是郭怡玲</span><br>
+                        喜歡嘗試不同的事物與挑戰<br>
+                        擅長使用與網頁互動的技巧<br>
                     </h4>
                     <figure class="sabFig">
                         <img src="images/sab.png" alt="">
@@ -414,7 +422,9 @@
                 </div>
             </div>
         </div>
-        <hr class="line line1">
+
+        <hr class="line line1" line1>
+        <div class="scroll_down line1">MY SKILL</div>
 
         <div class="saskill" id="saskill">
             <div class="container saskillBox">
@@ -422,14 +432,16 @@
                     <p class="rect_p">SKILL</p>
                 </div>
             </div>
+
         </div>
 
         <hr class="line line2">
+        <div class="scroll_down line2">MY WORK</div>
         <div class="saweb" id="saweb">
             <div class="container sawebBox">
                 <div class="flowerweb">
                     <figure>
-                        <a href="https://sabrinaguo.github.io/flowerShop/">
+                        <a href="https://sabrinaguo.github.io/flowerShop/" target="_block">
                             <div class="coverBox">
                                 <h5>運用<br>RWD HTML5 CSS3 JQUERY JS</h5>
                             </div>
@@ -441,7 +453,7 @@
                 </div>
                 <div class="spdsweb">
                     <figure>
-                        <a href="https://spdolls.000webhostapp.com/">
+                        <a href="https://spdolls.000webhostapp.com/" target="_block">
                             <div class="coverBox">
                                 <h5>運用<br>RWD HTML5 CSS3 JQUERY<br>JS PHP MYSQL BOOTSTRAP</h5>
                             </div>
@@ -453,11 +465,12 @@
             </div>
         </div>
         <hr class="line line3">
+        <div class="scroll_down line3">PS & AI</div>
         <div class="sadesign" id="sadesign">
             <div class="container sadesignBox">
                 <div class="spdsweb cards">
                     <figure>
-                        <a href="https://sabrinaguo.github.io/mange/index.html">
+                        <a href="https://sabrinaguo.github.io/mange/index.html" target="_block">
                             <div class="coverBox">
                                 <h5>運用<br>RWD HTML5 CSS3</h5>
                             </div>
@@ -468,7 +481,7 @@
                 </div>
                 <div class="spdsweb cards">
                     <figure>
-                        <a href="https://sabrinaguo.github.io/unifo/">
+                        <a href="https://sabrinaguo.github.io/unifo/" target="_block">
                             <div class="coverBox">
                                 <h5>運用<br>RWD HTML5 CSS3</h5>
                             </div>
@@ -502,8 +515,10 @@
                     <h3>APP畫面設計練習</h3>
                 </div>
             </div>
+
         </div>
         <hr class="line line4">
+        <div class="line4 scroll_down">CONTACT ME</div>
         <div class="sacontact" id="sacontact">
             <div class="container">
                 <div id="aboutContant">
@@ -587,8 +602,28 @@
         });
     </script>
     <script>
+        //gotop
+        if ($(window).scrollTop() > 0) {
+            $("#goTop").fadeIn();
+        }
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 0) {
+                $("#goTop").fadeIn();
+            } else {
+                $("#goTop").fadeOut();
+            }
+        });
+        $("#goTop").click(function () {
+            $('html,body').animate({ scrollTop: 0 }, 'slow');   /* 返回到最頂上 */
+            // console.log("++++");
+        });
+
+    </script>
+
+
+    <script>
         //sainfro
-        $('.tlt').textillate({ in: { effect: 'rotateIn' } });
+        $('.tlt').textillate({ in: { effect: 'fadeInLeftBig' } });
 
     </script>
     <script>
@@ -759,27 +794,27 @@
             if (scrolltop >= 100) {
                 $(".line1").css("left", "0%")
             }
-            if (scrolltop >= 700) {
+            if (scrolltop >= 600) {
                 $(".line1").css("left", "100%")
             }
 
-            if (scrolltop <= 900) {
+            if (scrolltop <= 700) {
                 $(".line2").css("left", "-100%")
             }
-            if (scrolltop >= 900) {
+            if (scrolltop >= 700) {
                 $(".line2").css("left", "0%")
             }
-            if (scrolltop >= 1300) {
+            if (scrolltop >= 1200) {
                 $(".line2").css("left", "100%")
             }
 
-            if (scrolltop <= 1600) {
+            if (scrolltop <= 1200) {
                 $(".line3").css("left", "-100%")
             }
-            if (scrolltop >= 1600) {
+            if (scrolltop >= 1300) {
                 $(".line3").css("left", "0%")
             }
-            if (scrolltop >= 2100) {
+            if (scrolltop >= 1900) {
                 $(".line3").css("left", "100%")
             }
 
