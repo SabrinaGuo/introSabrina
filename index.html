@@ -11,16 +11,25 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+
 </head>
 <style>
-    h2,
-    h4 {
+    body {
+        box-sizing: border-box;
         font-family: '微軟正黑體';
+    }
+
+    #bodywrap {
+        overflow-x: hidden;
     }
 
     .di_flex {
         display: flex;
-        align-content: center;
     }
 
     .opacity08 {
@@ -31,23 +40,28 @@
         opacity: 1;
     }
 
-    .introBG {
-        width: 80%;
-        transform: rotate(110deg);
-        background: #00CEFF;
-        margin: 10% 0 0 20%;
-        height: 69vh;
-        overflow: hidden;
+    .line {
+        background: #fff;
         position: relative;
+        margin: 0;
+        left: -100%;
+        width: 100%;
+        transition: .8s;
+        border: 0.5px solid black;
+        box-sizing: border-box;
+        s
     }
 
-    .container {
-        position: absolute;
-        top: 0;
-        left: calc(50% - 600px);
-    }
 
     /*---starMeun---*/
+    .goTop {
+        position: fixed;
+        right: 3%;
+        bottom: 3%;
+        font-size: 2rem;
+        color: #00CEFF;
+    }
+
     .meun {
         position: relative;
     }
@@ -59,7 +73,7 @@
         width: 2.3rem;
         height: 2.3rem;
         overflow: hidden;
-        z-index: 5;
+        z-index: 100;
     }
 
     .meunStar img:hover {
@@ -70,6 +84,7 @@
         width: 100%;
         height: 100%;
         object-fit: contain;
+        box-shadow: 1px 3px 3px #000;
     }
 
     .meunUl {
@@ -80,7 +95,7 @@
         height: 100vh;
         padding-left: 20%;
         padding-top: 5%;
-        z-index: 2;
+        z-index: 99;
         background: rgba(255, 255, 255, 0.9);
     }
 
@@ -97,8 +112,15 @@
 
     /*---introsa---*/
     .introsa {
-        display: flex;
+        background: url('images/bg.png') no-repeat;
+        height: 100vh;
+    }
+
+    .introsaBox {
         justify-content: space-between;
+        position: absolute;
+        top: 0;
+        left: 0;
     }
 
     .wordArea,
@@ -139,17 +161,170 @@
     }
 
     /*---saskill---*/
+    .saskill {
+        padding-top: 3%;
+        height: 100vh;
+        /* background: rgb(253, 162, 192); */
+    }
 
+    .saskillBox {
+        position: relative;
+    }
+
+    .react {
+        position: absolute;
+        top: calc(50% - -12.5rem);
+        left: calc(50% - 3.5rem);
+        width: 9rem;
+        height: 9rem;
+        border-radius: 50%;
+        background: #f7f2ae;
+        z-index: 7;
+    }
+
+    .react-b {
+        cursor: pointer;
+        position: absolute;
+        top: calc(50% - -12.5rem);
+        left: calc(50% - 3.5rem);
+        width: 9rem;
+        height: 9rem;
+        border-radius: 50%;
+        background: #68e3fd;
+        z-index: 7;
+    }
+
+    .rect_p {
+        position: absolute;
+        font-size: 1.5rem;
+        top: calc(50% - 1rem);
+        left: calc(50% - 1.8rem);
+        color: #232529;
+    }
+
+    .ball {
+        position: absolute;
+        top: calc(50% - -13.5rem);
+        left: calc(50% - 2.5rem);
+        width: 7rem;
+        height: 7rem;
+        border-radius: 50%;
+        background: #68e3fd;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .ball:hover {
+        background: #00bce2;
+    }
+
+    .ball p {
+        margin-top: 1rem;
+        font-size: 1rem;
+        color: #232529;
+    }
+
+    .ball span {
+        opacity: 0;
+        font-size: 1.5rem;
+        color: #fff;
+    }
 
     /*---saweb---*/
-    .saskill {
-        background: #00CEFF;
+    .saweb {
+        background: rgb(162, 253, 223);
         height: 100vh;
     }
+
+    .sawebBox {
+        display: flex;
+        justify-content: space-evenly;
+        box-sizing: border-box;
+        padding-top: calc(50% - 30rem);
+        padding-left: 8%;
+    }
+
+    .flowerweb,
+    .spdsweb {
+        width: 45%;
+        text-align: center;
+    }
+
+    .flowerweb figure,
+    .spdsweb figure {
+        width: 100%;
+        height: 15rem;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .coverBox {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, .6);
+        z-index: 6;
+        text-align: center;
+        /* line-height: 3rem; */
+        box-sizing: border-box;
+        padding-top: 17%;
+        color: #fff;
+    }
+
+    .flowerweb figure img,
+    .spdsweb figure img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    /*---sadesign---*/
+    .sadesign {
+        background: rgb(162, 212, 253);
+    }
+
+    .sadesignBox {
+        display: flex;
+        justify-content: space-evenly;
+        box-sizing: border-box;
+        padding-top: calc(50% - 40rem);
+        padding-left: 8%;
+        flex-wrap: wrap;
+    }
+
+    .cards {
+        width: 45%;
+        text-align: center;
+    }
+
+    .cards figure {
+        width: 100%;
+        height: 15rem;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .cards img {
+        height: 100%;
+        width: 100%;
+        object-fit: contain;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
 
 
     /*---contant---*/
     .sacontact {
+        background: rgb(253, 217, 162);
         height: 100vh;
     }
 
@@ -185,7 +360,7 @@
         width: 40px;
         height: 40px;
         overflow: hidden;
-        margin: 3%;
+        margin: 2%;
     }
 
     .contacntGroup figure img {
@@ -194,7 +369,7 @@
     }
 
     .contacntGroup h2 {
-        margin: 3%;
+        margin: 2%;
         font-size: 1.2rem;
     }
 
@@ -202,117 +377,170 @@
 </style>
 
 <body>
-    <div class="introBG">
+    <div id="bodywrap">
 
-    </div>
-    <div class="meun">
-        <figure class="meunStar">
-            <img class="star1 opacity08" src="images/cute-star.svg" alt="">
-        </figure>
-        <ul class="meunUl">
-            <li><a href="#saskill">SKILL</a></li>
-            <li><a href="#saweb">WEB</a></li>
-            <li><a href="#sadesign">PHOTSHOP & ILLUSTRATOR</a></li>
-            <li><a href="#sacontact">CONTANT</a></li>
-        </ul>
-    </div>
-    <div class="container">
 
-        <div class="introsa">
-            <div class="wordArea animated 1 slideInDown">
-                <h4>
-                    <span style="font-weight:900;">您好，我是郭怡玲</span><br>
-                    喜歡嘗試不同的事物與挑戰，<br>
-                    擅長使用與網頁互動的技巧!<br>
-                </h4>
-                <figure class="sabFig">
-                    <img src="images/sab.png" alt="">
-                </figure>
-            </div>
-            <div class="picArea animated 1 slideInDown">
-                <figure>
-                    <img src="images/IMG_2563.jpg" alt="">
-                </figure>
+        <div class="meun">
+            <figure class="meunStar">
+                <img class="star1 opacity08" src="images/cute-star-y.svg" alt="">
+            </figure>
+            <ul class="meunUl">
+                <li><a href="#saskill">SKILL</a></li>
+                <li><a href="#saweb">WEB</a></li>
+                <li><a href="#sadesign">PHOTSHOP & ILLUSTRATOR</a></li>
+                <li><a href="#sacontact">CONTANT</a></li>
+            </ul>
+        </div>
+        <div class="goTop">
+            <i class="fas fa-angle-double-up"></i>
+        </div>
+        <div class="introsa animated 1 slideInDown">
+            <div class="container introsaBox di_flex">
+                <div class="wordArea animated 1 slideInDown">
+                    <h4 class="tlt">
+                        <span style="font-weight:900;">您好，我是郭怡玲</span><br>
+                        喜歡嘗試不同的事物與挑戰，<br>
+                        擅長使用與網頁互動的技巧!<br>
+                    </h4>
+                    <figure class="sabFig">
+                        <img src="images/sab.png" alt="">
+                    </figure>
+                </div>
+
+                <div class="picArea animated 1 slideInDown">
+                    <figure>
+                        <img src="images/IMG_2563.jpg" alt="">
+                    </figure>
+                </div>
             </div>
         </div>
+        <hr class="line line1">
+
         <div class="saskill" id="saskill">
-
+            <div class="container saskillBox">
+                <div class="rect react-b animated infinite pulse">
+                    <p class="rect_p">SKILL</p>
+                </div>
+            </div>
         </div>
+
+        <hr class="line line2">
         <div class="saweb" id="saweb">
-            <div class="flowerweb">
-                <figure>
-                    <a href="https://sabrinaguo.github.io/flowerShop/"><img src="" alt=""></a>
-                </figure>
-            </div>
-            <div class="spdsweb">
-                <figure>
-                    <a href="https://spdolls.000webhostapp.com/"><img src="" alt=""></a>
-                </figure>
-            </div>
+            <div class="container sawebBox">
+                <div class="flowerweb">
+                    <figure>
+                        <a href="https://sabrinaguo.github.io/flowerShop/">
+                            <div class="coverBox">
+                                <h5>運用<br>RWD HTML5 CSS3 JQUERY JS</h5>
+                            </div>
+                            <img src="images/flowerShop.PNG" alt="繫縭花藝">
+                        </a>
 
-
+                    </figure>
+                    <h3>繫縭花藝 小專製作</h3>
+                </div>
+                <div class="spdsweb">
+                    <figure>
+                        <a href="https://spdolls.000webhostapp.com/">
+                            <div class="coverBox">
+                                <h5>運用<br>RWD HTML5 CSS3 JQUERY<br>JS PHP MYSQL BOOTSTRAP</h5>
+                            </div>
+                            <img src="images/spds.PNG" alt="SPDS電商網站">
+                        </a>
+                    </figure>
+                    <h3>SPDS電商網站 專題製作</h3>
+                </div>
+            </div>
         </div>
+        <hr class="line line3">
         <div class="sadesign" id="sadesign">
-            <div class="spdsweb cards">
-                <figure>
-                    <a href="https://sabrinaguo.github.io/mange/index.html"><img src="" alt=""></a>
-                </figure>
+            <div class="container sadesignBox">
+                <div class="spdsweb cards">
+                    <figure>
+                        <a href="https://sabrinaguo.github.io/mange/index.html">
+                            <div class="coverBox">
+                                <h5>運用<br>RWD HTML5 CSS3</h5>
+                            </div>
+                            <img src="images/mange.PNG" alt="">
+                        </a>
+                    </figure>
+                    <h3>網站切版 經理人班</h3>
+                </div>
+                <div class="spdsweb cards">
+                    <figure>
+                        <a href="https://sabrinaguo.github.io/unifo/">
+                            <div class="coverBox">
+                                <h5>運用<br>RWD HTML5 CSS3</h5>
+                            </div>
+                            <img src="images/unifo.PNG" alt="">
+                        </a>
+                    </figure>
+                    <h3>網頁切版 制服地圖活動</h3>
+                </div>
+                <div class="cards">
+                    <figure>
+                        <img src="images/card1.jpg" alt="">
+                    </figure>
+                    <h3>名片設計</h3>
+                </div>
+                <div class="cards">
+                    <figure>
+                        <img src="images/card2.jpg" alt="">
+                    </figure>
+                    <h3>名片設計</h3>
+                </div>
+                <div class="cards">
+                    <figure>
+                        <img src="images/home page.png" alt="">
+                    </figure>
+                    <h3>APP畫面設計練習</h3>
+                </div>
+                <div class="cards">
+                    <figure>
+                        <img src="images/iPhone.png" alt="">
+                    </figure>
+                    <h3>APP畫面設計練習</h3>
+                </div>
             </div>
-            <div class="spdsweb cards">
-                <figure>
-                    <a href="https://sabrinaguo.github.io/unifo/"><img src="" alt=""></a>
-                </figure>
-            </div>
-            <div class="cards">
-                <figure>
-                    <img src="" alt="">
-                </figure>
-            </div>
-            <div class="cards">
-                <figure>
-                    <img src="" alt="">
-                </figure>
-            </div>
-
         </div>
+        <hr class="line line4">
         <div class="sacontact" id="sacontact">
-            <div id="aboutContant">
-                <figure class="animated infinite tada .5s">
-                    <img src="images/teapot.svg" alt="" class="teapot ">
-                </figure>
-            </div>
-
-            <div class="contacntGroup">
-                <div id="userName" class="di_flex animated 1 fadeInDown 3.5s">
-                    <figure>
-                        <img src="images/user.svg" alt="">
+            <div class="container">
+                <div id="aboutContant">
+                    <figure class="animated infinite tada .5s">
+                        <img src="images/teapot.svg" alt="" class="teapot ">
                     </figure>
-                    <h2>郭怡玲 Sabrina</h2>
                 </div>
-                <div id="mail" class="di_flex animated 1 fadeInDown 2.5">
-                    <figure>
-                        <img src="images/mail.svg" alt="">
-                    </figure>
-                    <h2>hsif0111@gmail.com</h2>
+                <div class="contacntGroup">
+                    <div id="userName" class="di_flex animated 1 fadeInDown 3.5s">
+                        <figure>
+                            <img src="images/user.svg" alt="">
+                        </figure>
+                        <h2>郭怡玲 Sabrina</h2>
+                    </div>
+                    <div id="mail" class="di_flex animated 1 fadeInDown 2.5">
+                        <figure>
+                            <img src="images/mail.svg" alt="">
+                        </figure>
+                        <h2>hsif0111@gmail.com</h2>
+                    </div>
+                    <div id="phone" class="di_flex animated 1 fadeInDown 1.5s">
+                        <figure>
+                            <img src="images/smartphone.svg" alt="">
+                        </figure>
+                        <h2>0905-889101</h2>
+                    </div>
+                    <div id="lineId" class="di_flex animated 1 fadeInDown .8s">
+                        <figure>
+                            <img src="images/chat.svg" alt="">
+                        </figure>
+                        <h2>LINE ID:orangeguo</h2>
+                    </div>
                 </div>
-                <div id="phone" class="di_flex animated 1 fadeInDown 1.5s">
-                    <figure>
-                        <img src="images/smartphone.svg" alt="">
-                    </figure>
-                    <h2>0905-889101</h2>
-                </div>
-                <div id="lineId" class="di_flex animated 1 fadeInDown .8s">
-                    <figure>
-                        <img src="images/chat.svg" alt="">
-                    </figure>
-                    <h2>LINE ID:orangeguo</h2>
-                </div>
-
             </div>
         </div>
-
     </div>
-
+    </div>
 
 
 
@@ -328,6 +556,11 @@
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+        integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30=" crossorigin="anonymous"></script>
+    <script src="https://cdn.rawgit.com/jschr/textillate/master/assets/jquery.lettering.js"></script>
+    <script src="https://cdn.rawgit.com/jschr/textillate/master/jquery.textillate.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
         integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>
@@ -354,6 +587,144 @@
         });
     </script>
     <script>
+        //sainfro
+        $('.tlt').textillate({ in: { effect: 'rotateIn' } });
+
+    </script>
+    <script>
+        //skill
+        var ballArea = $('.saskillBox'),
+            rect = $('.rect'),
+            obj, i, x, y, k;
+        var skillOpen = false;//收起
+        var bigEnabled = true;
+        var balls = [];
+        var ballArray2 = ['HTML5<br><span>90%</span>', 'CSS3<br><span>90%</span>', 'BOOTSTRAP<br><span>90%</span>', 'JAVASCRIPT<br><span>90%</span>', 'JQUERY<br><span>90%</span>', 'PHOTOSHOP<br><span>90%</span>', 'ILLUSTRATOR<br><span>90%</span>', 'ADOBE XD<br><span>90%</span>', 'RWD<br><span>90%</span>'];
+
+        var ballNum = 9;
+        var ballAng = Math.PI * 2 / ballNum;
+
+        for ($i = 0; $i < ballNum; $i++) {
+
+            obj = $(`<div class=\"ball\" data-bx="calc(50% - -13.5rem);" data-by="calc(50% - 2.5rem);"><p>${ballArray2[$i]}</p></div>`);
+
+            ballArea.append(obj);
+            balls.push(obj);
+        }
+
+
+
+        balls.forEach(function (el, i) {
+            x = 570 - 40 + Math.floor(Math.cos(ballAng * i - Math.PI / 2) * 200);
+            y = 270 - 40 + Math.floor(Math.sin(ballAng * i - Math.PI / 2) * 200);
+
+            el.attr('data-ex', x);
+            el.attr('data-ey', y);
+
+
+        });
+
+        rect.click(function () {
+            skillOpen = !skillOpen;
+            if (!bigEnabled) {
+                return; //不運作
+            };
+            bigEnabled = false;
+
+            $(this).toggleClass('animated');
+            $(this).toggleClass('react-b react');
+
+
+            if (skillOpen) {
+                balls.forEach(function (el, i) {
+                    var ex = el.attr('data-ex');
+                    var ey = el.attr('data-ey');
+                    el.delay(150 * i).animate({
+                        left: ex,
+                        top: ey,
+                    }, 400, 'easeInOutBack');
+                });
+
+            } else {
+
+                balls.forEach(function (el, i) {
+                    var bx = el.attr('data-bx');
+                    var by = el.attr('data-by');
+                    el.delay(150 * i).animate({
+                        left: bx,
+                        top: by,
+                    }, 400, 'easeInOutBack');
+
+                });
+            }
+
+            // 定時去開啟按鈕的點按功能 以確認動畫運作完畢才開啟按鈕功能
+            setTimeout(function () {
+                bigEnabled = true;
+            }, 1800); //150*9 +400
+
+
+        });
+        $('.ball').mouseenter(function () {
+            $(this).find('span').css('opacity', '1').siblings().css('opacity', '0');
+            $(this).find('p').css('color', '#fff').siblings().css('color', '#232529')
+
+        });
+        $('.ball').mouseleave(function () {
+            $(this).find('span').css('opacity', '0');
+            $(this).find('p').css('color', '#232529');
+
+        });
+
+
+    </script>
+    <script>
+        //saweb
+        $('.coverBox').hide();
+        $('.saweb').find('figure').mouseenter(function () {
+            console.log('ooo');
+            $(this).find('.coverBox').show();
+            $(this).find('img').css({
+                "transform": "scale(1.1)",
+                "opacity": ".7",
+
+            });
+
+        });
+        $('.saweb').find('figure').mouseleave(function () {
+            $(this).find('.coverBox').hide();
+            $(this).find('img').css({
+                "transform": "scale(1)",
+                "opacity": "1",
+
+            });
+        });
+
+    </script>
+    <script>
+        //sasign
+        $('.coverBox').hide();
+        $('.sadesign').find('figure').mouseenter(function () {
+            console.log('ooo');
+            $(this).find('.coverBox').show();
+            $(this).find('img').css({
+                "transform": "scale(1.1)",
+                "opacity": ".7",
+
+            });
+
+        });
+        $('.sadesign').find('figure').mouseleave(function () {
+            $(this).find('.coverBox').hide();
+            $(this).find('img').css({
+                "transform": "scale(1)",
+                "opacity": "1",
+
+            });
+        });
+
+    </script>
+    <script>
         //contact area
         var contacntGroup = $('.contacntGroup');
         contacntGroup.hide();
@@ -376,6 +747,52 @@
         );
 
 
+    </script>
+    <script>
+        //line
+        $(window).on("scroll", function () {
+            var scrolltop = $(this).scrollTop()
+            console.log(scrolltop)
+            if (scrolltop <= 100) {
+                $(".line1").css("left", "-100%")
+            }
+            if (scrolltop >= 100) {
+                $(".line1").css("left", "0%")
+            }
+            if (scrolltop >= 700) {
+                $(".line1").css("left", "100%")
+            }
+
+            if (scrolltop <= 900) {
+                $(".line2").css("left", "-100%")
+            }
+            if (scrolltop >= 900) {
+                $(".line2").css("left", "0%")
+            }
+            if (scrolltop >= 1300) {
+                $(".line2").css("left", "100%")
+            }
+
+            if (scrolltop <= 1600) {
+                $(".line3").css("left", "-100%")
+            }
+            if (scrolltop >= 1600) {
+                $(".line3").css("left", "0%")
+            }
+            if (scrolltop >= 2100) {
+                $(".line3").css("left", "100%")
+            }
+
+            if (scrolltop <= 2300) {
+                $(".line4").css("left", "-100%")
+            }
+            if (scrolltop >= 2300) {
+                $(".line4").css("left", "0%")
+            }
+            if (scrolltop >= 2800) {
+                $(".line4").css("left", "100%")
+            }
+        })
     </script>
 </body>
 
