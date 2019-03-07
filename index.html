@@ -316,6 +316,12 @@
         color: #fff;
     }
 
+    .mSkillBox {
+        position: relative;
+        padding-top: 10%;
+        display: none;
+    }
+
     /*---saweb---*/
     .saweb {
         background: #fbf5ea;
@@ -465,6 +471,136 @@
     }
 
     /*---RWD---*/
+
+    @media screen and (max-width:375px) {
+
+        .eventBox {
+            display: none;
+            /* padding-bottom: 0;
+            flex-wrap: nowrap; */
+        }
+
+        .saskillBox {
+            position: relative;
+            display: none;
+        }
+
+        .mSkillBox {
+            position: relative;
+            padding-top: 10%;
+            display: block;
+        }
+
+        .mreact-b {
+            cursor: pointer;
+            position: absolute;
+            top: calc(50% - -8.5rem);
+            left: calc(50% - 5rem);
+            width: 11rem;
+            height: 11rem;
+            border-radius: 50%;
+            background: #68e3fd;
+            z-index: 7;
+        }
+
+        .mballArea {
+            position: absolute;
+            top: 3rem;
+            left: 1.5rem;
+            width: 90%;
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 auto;
+
+        }
+
+        .mball {
+            width: 6rem;
+            height: 6rem;
+            border-radius: 50%;
+            background: #00CEFF;
+            margin: 6% 2%;
+            text-align: center;
+            padding-top: 8%;
+        }
+
+        .mball p {
+            color: #232529;
+            font-size: .8rem;
+            margin: 0;
+        }
+
+        .saweb {
+            background: #fbf5ea;
+            height: max-content;
+        }
+
+        .sawebBox {
+            display: block;
+            flex-wrap: nowrap;
+            justify-content: space-evenly;
+            box-sizing: border-box;
+            padding-top: 4%;
+        }
+
+        .flowerweb,
+        .spdsweb {
+            width: 100%;
+            text-align: center;
+            margin: 0;
+        }
+
+        .flowerweb figure,
+        .spdsweb figure {
+            width: 100%;
+            height: 15rem;
+            overflow: hidden;
+            position: relative;
+            margin: 0;
+        }
+
+        .sadesign {
+            background: #f0f6ff;
+            /* height: max-content; */
+        }
+
+        .sadesignBox {
+            display: block;
+            justify-content: space-evenly;
+            box-sizing: border-box;
+            padding-top: 0;
+            padding-bottom: 0;
+            flex-wrap: nowrap;
+            height: max-content;
+        }
+
+        .cards {
+            width: 100%;
+            text-align: center;
+        }
+
+        #aboutContant figure {
+            position: absolute;
+            right: 21%;
+            width: 12.5rem;
+            height: 12.5rem;
+            /* overflow: hidden; */
+            margin-top: 36%;
+            animation-duration: 2s;
+        }
+
+        .contacntGroup {
+            display: flex;
+            flex-direction: column;
+            /* margin: 0 auto; */
+            padding: 69% 0 0 0;
+        }
+
+
+
+
+
+    }
 </style>
 
 <body>
@@ -472,7 +608,7 @@
 
 
         <div class="meun">
-            <figure class="meunStar">
+            <figure class="meunStar  animated infinite jello ">
                 <img class="star1 opacity08" src="images/cute-star.svg" alt="">
             </figure>
             <ul class="meunUl">
@@ -543,6 +679,51 @@
                     <p class="rect_p">SKILL</p>
                 </div>
             </div>
+            <div class="mSkillBox">
+                <div class="mreact-b animated infinite pulse">
+                    <p class="rect_p">SKILL</p>
+                </div>
+                <div class="mballArea">
+                    <div class="mball animated 1 fadeIn delay-.8s">
+                        <p>HTML5</p>
+                        <span>90%</span>
+                    </div>
+                    <div class="mball animated 1 fadeIn delay-1.3s">
+                        <p>CSS3</p>
+                        <span>80%</span>
+                    </div>
+                    <div class="mball animated 1 fadeIn delay-1.6s">
+                        <p>RWD</p>
+                        <span>90%</span>
+                    </div>
+                    <div class="mball animated 1 fadeIn delay-1.9s">
+                        <p>BOOTSTRAP</p>
+                        <span>80%</span>
+                    </div>
+                    <div class="mball animated 1 fadeIn delay-2.2s">
+                        <p>JQUERY</p>
+                        <span>70%</span>
+                    </div>
+                    <div class="mball animated 1 fadeIn delay-2.5s">
+                        <p>JAVASCRIPT</p>
+                        <span>60%</span>
+                    </div>
+                    <div class="mball animated 1 fadeIn delay-2.8s">
+                        <p>PHOTOSHOP</p>
+                        <span>90%</span>
+                    </div>
+                    <div class="mball animated 1 fadeIn delay-3.1s">
+                        <p>ILLUSTRATOR</p>
+                        <span>90%</span>
+                    </div>
+
+                    <div class="mball animated 1 fadeIn delay-3.4s">
+                        <p>ADOBE XD</p>
+                        <span>90%</span>
+                    </div>
+                </div>
+
+            </div>
 
         </div>
 
@@ -554,7 +735,7 @@
                     <figure>
                         <a href="https://sabrinaguo.github.io/flowerShop/" target="_block">
                             <div class="coverBox">
-                                <h5>運用<br>RWD HTML5 CSS3 JQUERY JS</h5>
+                                <h5>運用<br><br>RWD HTML5 CSS3 JQUERY JS</h5>
                             </div>
                             <img src="images/flowerShop.PNG" alt="繫縭花藝">
                         </a>
@@ -566,7 +747,7 @@
                     <figure>
                         <a href="https://spdolls.000webhostapp.com/" target="_block">
                             <div class="coverBox">
-                                <h5>運用<br>RWD HTML5 CSS3 JQUERY<br>JS PHP MYSQL BOOTSTRAP</h5>
+                                <h5>運用<br><br>RWD HTML5 CSS3 JQUERY<br>JS PHP MYSQL BOOTSTRAP</h5>
                             </div>
                             <img src="images/spds.PNG" alt="SPDS電商網站">
                         </a>
@@ -577,7 +758,7 @@
                     <figure>
                         <a href="https://sabrinaguo.github.io/mange/index.html" target="_block">
                             <div class="coverBox">
-                                <h5>運用<br>RWD HTML5 CSS3</h5>
+                                <h5>運用<br><br>RWD HTML5 CSS3</h5>
                             </div>
                             <img src="images/mange.PNG" alt="">
                         </a>
@@ -588,7 +769,7 @@
                     <figure>
                         <a href="https://sabrinaguo.github.io/unifo/" target="_block">
                             <div class="coverBox">
-                                <h5>運用<br>RWD HTML5 CSS3</h5>
+                                <h5>運用<br><br>RWD HTML5 CSS3</h5>
                             </div>
                             <img src="images/unifo.PNG" alt="">
                         </a>
@@ -761,7 +942,7 @@
         var skillOpen = false;//收起
         var bigEnabled = true;
         var balls = [];
-        var ballArray2 = ['HTML5<br><span>90%</span>', 'CSS3<br><span>80%</span>', 'BOOTSTRAP<br><span>80%</span>', 'JAVASCRIPT<br><span>70%</span>', 'JQUERY<br><span>70%</span>', 'PHOTOSHOP<br><span>90%</span>', 'ILLUSTRATOR<br><span>90%</span>', 'ADOBE XD<br><span>90%</span>', 'RWD<br><span>90%</span>'];
+        var ballArray2 = ['HTML5<br><span>90%</span>', 'CSS3<br><span>80%</span>', 'BOOTSTRAP<br><span>80%</span>', 'JAVASCRIPT<br><span>60%</span>', 'JQUERY<br><span>70%</span>', 'PHOTOSHOP<br><span>90%</span>', 'ILLUSTRATOR<br><span>90%</span>', 'ADOBE XD<br><span>90%</span>', 'RWD<br><span>90%</span>'];
 
         var ballNum = 9;
         var ballAng = Math.PI * 2 / ballNum;
@@ -841,6 +1022,19 @@
 
     </script>
     <script>
+        $('.mballArea').hide();
+        $('.mballArea').find('.mball').removeClass('animated');
+
+        $('.mreact-b').click(function () {
+            $(this).fadeOut();
+            $('.mballArea').show();
+            $('.mballArea').find('.mball').addClass('animated');
+        });
+
+
+
+    </script>
+    <script>
         //saweb
         $('.coverBox').hide();
         $('.saweb').find('figure').mouseenter(function () {
@@ -888,25 +1082,60 @@
     </script>
     <script>
         //contact area
-        var contacntGroup = $('.contacntGroup');
-        contacntGroup.hide();
-        $('.teapot').on(
-            'click', function () {
-                $(this).closest('#aboutContant').css({
-                    'transform': 'rotate(-20deg)',
-                    'position': 'absolute',
-                    'right': '15%',
-                    'width': '200px',
-                    'height': '200px',
-                    'marginTop': '-1%',
-                });
-                contacntGroup.fadeIn();
-                $(this).closest('figure').removeClass('animated');
-            }
+
+        function isMobile() {
+
+            try { document.createEvent("TouchEvent"); return true; }
+
+            catch (e) { return false; }
+
+        }
+        if (isMobile()) {
+            var contacntGroup = $('.contacntGroup');
+            contacntGroup.hide();
+            $('.teapot').on(
+                'click', function () {
+                    $(this).closest('#aboutContant').css({
+                        'transform': 'rotate(-20deg)',
+                        'position': 'absolute',
+                        'right': '17%',
+                        'width': '10.5rem',
+                        'height': '10.5rem',
+                        'marginTop': '-19%',
+                    });
+                    contacntGroup.fadeIn();
+                    $(this).closest('figure').removeClass('animated');
+                }
 
 
 
-        );
+            );
+        }
+
+        else {
+            var contacntGroup = $('.contacntGroup');
+            contacntGroup.hide();
+            $('.teapot').on(
+                'click', function () {
+                    $(this).closest('#aboutContant').css({
+                        'transform': 'rotate(-20deg)',
+                        'position': 'absolute',
+                        'right': '15%',
+                        'width': '200px',
+                        'height': '200px',
+                        'marginTop': '-1%',
+                    });
+                    contacntGroup.fadeIn();
+                    $(this).closest('figure').removeClass('animated');
+                }
+
+
+
+            );
+        }
+
+
+
 
 
     </script>
