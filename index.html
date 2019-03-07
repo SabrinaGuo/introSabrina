@@ -675,12 +675,12 @@
 
         <div class="saskill" id="saskill">
             <div class="container saskillBox">
-                <div class="rect react-b animated infinite pulse">
+                <div class=" rect react-b animated infinite pulse" id="ballmove">
                     <p class="rect_p">SKILL</p>
                 </div>
             </div>
             <div class="mSkillBox">
-                <div class="mreact-b animated infinite pulse">
+                <div class="mreact-b animated infinite pulse" id="ballmove">
                     <p class="rect_p">SKILL</p>
                 </div>
                 <div class="mballArea">
@@ -937,7 +937,7 @@
     <script>
         //skill
         var ballArea = $('.saskillBox'),
-            rect = $('.rect'),
+            ballmove = $('#ballmove'),
             obj, i, x, y, k;
         var skillOpen = false;//收起
         var bigEnabled = true;
@@ -967,7 +967,7 @@
 
         });
 
-        rect.click(function () {
+        ballmove.hover(function () {
             skillOpen = !skillOpen;
             if (!bigEnabled) {
                 return; //不運作
